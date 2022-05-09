@@ -1,6 +1,3 @@
-// Environment Variables (Variables de entorno)
-require('dotenv').config();
-
 const cors = require('cors');
 const express = require('express');
 const morgan = require('morgan');
@@ -30,8 +27,4 @@ app.use('/api/package', require('./routes/send.routes'));
 // ---------------------------------------------------------------
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Starting the server (Iniciando el servidor)
-// ---------------------------------------------------------------
-app.listen(app.get('port'), () => {
-    console.log(`Server on port ${app.get('port')}`);
-});
+module.exports = app;
